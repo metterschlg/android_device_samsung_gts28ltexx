@@ -77,10 +77,10 @@
   <ctl name="AIF1TX2 Input 2" value="ASRC2R" />
 
   <!-- LHPF1 & 2 filter -->
-  <ctl name="LHPF1 Coefficients" value="240 58" />
-  <ctl name="LHPF2 Coefficients" value="240 58" />
-  <ctl name="LHPF3 Coefficients" value="240 1" />
-  <ctl name="LHPF4 Coefficients" value="240 58" />
+  <!-- name="LHPF1 Coefficients" value="240 58" -->
+  <!-- name="LHPF2 Coefficients" value="240 58" -->
+  <!-- name="LHPF3 Coefficients" value="240 1" -->
+  <!-- name="LHPF4 Coefficients" value="240 58" -->
 
   <!-- ctl name="LHPF1 COEFF FILTER" value="0"  -->
   <!--  this is need to add to machine driver -->
@@ -284,7 +284,7 @@
 
   <path name="gain-camcorder-mic">
     <ctl name="IN1L Volume" value="14" />
-    <ctl name="IN1L Digital Volume" value="128" />
+    <ctl name="IN1L Digital Volume" value="155" />
     <ctl name="LHPF1 Input 1 Volume" value="32" />
   </path>
 
@@ -356,7 +356,7 @@
   </path>
 
   <path name="gain-media-speaker">
-    <ctl name="Speaker Digital Volume" value="126" />
+    <ctl name="Speaker Digital Volume" value="145" />
     <ctl name="SPKOUTL Input 1 Volume" value="30" />
     <ctl name="SPKOUTR Input 1 Volume" value="29" />
   </path>
@@ -441,7 +441,7 @@
 
   <path name="gain-media-mic">
     <ctl name="IN1L Volume" value="30" />
-    <ctl name="IN1L Digital Volume" value="128" />
+    <ctl name="IN1L Digital Volume" value="155" />
     <ctl name="LHPF1 Input 1 Volume" value="32" />
   </path>
 
@@ -452,7 +452,7 @@
 
   <path name="gain-recording-mic">
     <ctl name="IN1L Volume" value="30" />
-    <ctl name="IN1L Digital Volume" value="128" />
+    <ctl name="IN1L Digital Volume" value="155" />
     <ctl name="LHPF1 Input 1 Volume" value="30" />
   </path>
 

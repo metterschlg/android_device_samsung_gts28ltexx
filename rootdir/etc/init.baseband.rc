@@ -23,21 +23,20 @@ on fs
     chmod 0660 /sys/devices/virtual/misc/umts_dm0/dm_state
     chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
 
-# Parse hardware revision (needs to happen before cbd starts)
-service modemloader /system/bin/modemloader
-    class core
-    oneshot
-
 # CP Boot Daemon (CBD)
-service cpboot-daemon /system/bin/cbd -d -t ss333 -b s -m l -p 13
+service cpboot-daemon /vendor/bin/cbd -d -t ss333 -b s -m l -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
+	seclabel u:r:cpboot-daemon:s0
+
+# RIL
+service ril-daemon /vendor/bin/hw/rild
+    class main
+    user root
+    group radio cache inet misc audio log readproc wakelock
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
 on property:persist.sys.cpboot=disable
     stop cpboot-daemon
-
-on property:ro.debug_level=0x494d
-    write /d/tracing/buffer_size_kb 1408
-    write /d/tracing/events/modem_if/mif_log/enable 1
-    write /d/tracing/tracing_on 1
-    write /sys/module/modem_utils/parameters/dflags 13
+    stop ril-daemon
