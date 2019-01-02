@@ -251,8 +251,8 @@
 
   <path name="gain-media-headset-mic">
     <ctl name="IN2 Volume" value="30" />
-    <ctl name="IN2 Digital Volume" value="128" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN2 Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="headset-mic">
@@ -284,8 +284,8 @@
 
   <path name="gain-camcorder-mic">
     <ctl name="IN1L Volume" value="14" />
-    <ctl name="IN1L Digital Volume" value="155" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN1L Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="camcorder-mic">
@@ -356,9 +356,9 @@
   </path>
 
   <path name="gain-media-speaker">
-    <ctl name="Speaker Digital Volume" value="145" />
-    <ctl name="SPKOUTL Input 1 Volume" value="30" />
-    <ctl name="SPKOUTR Input 1 Volume" value="29" />
+    <ctl name="Speaker Digital Volume" value="120" />
+    <ctl name="SPKOUTL Input 1 Volume" value="45" />
+    <ctl name="SPKOUTR Input 1 Volume" value="45" />
   </path>
 
   <path name="gain-media-headset">
@@ -441,8 +441,8 @@
 
   <path name="gain-media-mic">
     <ctl name="IN1L Volume" value="30" />
-    <ctl name="IN1L Digital Volume" value="155" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN1L Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-media-bt-sco-headset-in">
@@ -452,14 +452,14 @@
 
   <path name="gain-recording-mic">
     <ctl name="IN1L Volume" value="30" />
-    <ctl name="IN1L Digital Volume" value="155" />
-    <ctl name="LHPF1 Input 1 Volume" value="30" />
+    <ctl name="IN1L Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-recording-headset-mic">
     <ctl name="IN2 Volume" value="30" />
-    <ctl name="IN2 Digital Volume" value="118" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN2 Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-incall_nb-handset-mic">
@@ -468,14 +468,14 @@
 
   <path name="gain-incall_nb-speaker-mic">
     <ctl name="IN1L Volume" value="20" />
-    <ctl name="IN1L Digital Volume" value="128" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN1L Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-incall_nb-headset-mic">
     <ctl name="IN2 Volume" value="21" />
-    <ctl name="IN2 Digital Volume" value="128" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN2 Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-incall_wb-handset-mic">
@@ -484,14 +484,14 @@
 
   <path name="gain-incall_wb-speaker-mic">
     <ctl name="IN1L Volume" value="20" />
-    <ctl name="IN1L Digital Volume" value="128" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN1L Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <path name="gain-incall_wb-headset-mic">
     <ctl name="IN2 Volume" value="21" />
-    <ctl name="IN2 Digital Volume" value="128" />
-    <ctl name="LHPF1 Input 1 Volume" value="32" />
+    <ctl name="IN2 Digital Volume" value="127" />
+    <ctl name="LHPF1 Input 1 Volume" value="49" />
   </path>
 
   <!-- Paths for the audio HAL (we map this to the Samsung paths) -->
@@ -638,3 +638,4 @@
   </path>
 
 </mixer>
+
