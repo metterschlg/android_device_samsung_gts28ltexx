@@ -19,17 +19,16 @@ DEVICE_PACKAGE_OVERLAYS += \
 	
 # Radio
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.0 \
+    android.hardware.radio.deprecated@1.0 \
     libxml2 \
     libprotobuf-cpp-full \
-    android.hardware.radio@1.0 \
-    android.hardware.radio.deprecated@1.0
-
-PRODUCT_PACKAGES += \
     rild \
     libril \
     libsecril-client \
     libsecril-client-sap \
-    modemloader
+    modemloader \
+    Stk
 
 PRODUCT_PACKAGES += \
     SamsungServiceMode	
