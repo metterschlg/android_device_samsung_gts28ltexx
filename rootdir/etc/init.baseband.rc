@@ -28,14 +28,6 @@ service cpboot-daemon /vendor/bin/cbd -d -t ss333 -b s -m l -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
-	seclabel u:r:cpboot-daemon:s0
-
-# RIL
-service ril-daemon /vendor/bin/hw/rild
-    class main
-    user root
-    group radio cache inet misc audio log readproc wakelock
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 on property:persist.sys.cpboot=disable
     stop cpboot-daemon

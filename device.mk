@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
     libsecril-client-sap \
     modemloader \
     Stk
+    
+# RILD
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.legacy.rc
 
 PRODUCT_PACKAGES += \
     SamsungServiceMode	
