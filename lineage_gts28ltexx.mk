@@ -33,6 +33,6 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_BUILD_PROP_OVERRIDES += \
   PRODUCT_NAME=gts28ltexx \
   TARGET_DEVICE=gts28ltexx \
-  PRIVATE_BUILD_DESC="gts28ltexx-user 7.0 NRD90M T715XXU2CRH1 release-keys"
+  PRIVATE_BUILD_DESC="gts28ltexx-user 7.0 NRD90M T715XXU2CRB1 release-keys"
 
-BUILD_FINGERPRINT := samsung/gts28ltexx/gts28lte:7.0/NRD90M/T715XXU2CRH1:user/release-keys
+BUILD_FINGERPRINT := samsung/gts28ltexx/gts28lte:7.0/NRD90M/T715XXU2CRB1:user/release-keys
