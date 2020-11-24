@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_gts28ltexx.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_gts28ltexx-user \
+    lineage_gts28ltexx-userdebug \
+    lineage_gts28ltexx-eng
