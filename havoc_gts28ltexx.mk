@@ -20,11 +20,11 @@ $(call inherit-product, device/samsung/gts2-common/device-common.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
-$(call inherit-product, vendor/lineage/config/telephony.mk)
+# Inherit some common Havoc-OS stuff.
+$(call inherit-product, vendor/havoc/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/havoc/config/telephony.mk)
 
-PRODUCT_NAME := lineage_gts28ltexx
+PRODUCT_NAME := havoc_gts28ltexx
 PRODUCT_DEVICE := gts28ltexx
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T715
