@@ -1,5 +1,8 @@
 LOCAL_PATH := device/samsung/gts28ltexx
 
+# Hidl
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
