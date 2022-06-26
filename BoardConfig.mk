@@ -16,6 +16,10 @@ BOARD_PROVIDES_LIBRIL := true
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := gts28lte,gts28ltexx
 
+# Add RIL-specific SELINUX policy
+BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
+BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy-ril
+
 # Inherit common board flags
 include device/samsung/gts2-common/BoardConfigCommon.mk
 

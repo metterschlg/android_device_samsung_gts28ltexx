@@ -1,0 +1,64 @@
+# cbd modem daemon service
+# Kanged from https://github.com/a3y17lte/sepolicy/blob/master/cbd.te and 
+# https://github.com/GauthamAsir/Exynos7580-android_device_samsung_exynos7580-common/blob/master/sepolicy/cbd.te
+type cbd, domain;
+type cbd_exec, exec_type, vendor_file_type, file_type;
+
+net_domain(cbd);
+init_daemon_domain(cbd);
+wakelock_use(cbd);
+
+allow cbd self:capability { dac_override setuid setgid };
+
+# FIXME neverallow rule
+# allow cbd self:capability mknod;
+allow cbd kernel:system syslog_read;
+allow cbd cgroup:dir create_dir_perms;
+
+# /dev/log/*
+#allow cbd log_device:dir r_dir_perms;
+#allow cbd log_device:chr_file rw_file_perms;
+# /dev/kmsg (write to kernel log)
+allow cbd kmsg_device:chr_file rw_file_perms;
+
+# /dev/umts_boot0
+allow cbd mif_device:chr_file rw_file_perms;
+# /dev/mbin0
+allow cbd emmcblk_device:blk_file r_file_perms;
+# /dev/block/mmcblk0p13
+allow cbd block_device:dir r_dir_perms;
+# W cbd     : type=1400 audit(0.0:89): avc: denied { read } for name="mmcblk0p13" dev="tmpfs" ino=3704 scontext=u:r:cbd:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file
+# W cbd     : type=1400 audit(0.0:89): avc: denied { open } for path="/dev/block/mmcblk0p13" dev="tmpfs" ino=3704 scontext=u:r:cbd:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file
+# W cbd     : type=1400 audit(0.0:90): avc: denied { read } for name="mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:sysfs:s0 tclass=dir
+# W cbd     : type=1400 audit(0.0:90): avc: denied { open } for path="/sys/bus/platform/drivers/mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:
+allow cbd block_device:blk_file r_file_perms;
+
+# /proc/sys/vm/overcommit_memory
+# W cbd     : type=1400 audit(0.0:81): avc: denied { read } for name="overcommit_memory" dev="proc" ino=12263 scontext=u:r:cbd:s0 tcontext=u:object_r:proc_overcommit_memory:s0 tclass=file
+# W cbd     : type=1400 audit(0.0:81): avc: denied { open } for path="/proc/sys/vm/overcommit_memory" dev="proc" ino=12263 scontext=u:r:cbd:s0 tcontext=u:object_r:proc_overcommit_memory:s0 tclass=file
+# W cbd     : type=1400 audit(0.0:82): avc: denied { read } for name="cmdline" dev="proc" ino=4026541346 scontext=u:r:cbd:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file
+# W cbd     : type=1400 audit(0.0:82): avc: denied { open } for path="/proc/cmdline" dev="proc" ino=4026541346 scontext=u:r:cbd:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file
+allow cbd proc_overcommit_memory:file { read open };
+allow cbd proc_cmdline:file { read open };
+
+# /dev/mipi-lli/lli_control
+allow cbd sysfs_mipi_writable:file rw_file_perms;
+
+# /efs
+allow cbd efs_file:dir r_dir_perms;
+
+# /efs/nv_data.bin
+allow cbd bin_nv_data_efs_file:file rw_file_perms;
+
+allow cbd proc:file { read getattr open };
+allow cbd radio_block_device:blk_file { read open };
+allow cbd rootfs:file { entrypoint read };
+# W cbd     : type=1400 audit(0.0:86): avc: denied { read } for name="mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:sysfs:s0 tclass=dir
+# W cbd     : type=1400 audit(0.0:86): avc: denied { open } for path="/sys/bus/platform/drivers/mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:sysfs:s0 tclass=dir
+allow cbd sysfs:dir { read open };
+allow cbd sysfs:file { read open };
+
+# set properties on boot
+set_prop(cbd, cpboot-daemon_prop);
+set_prop(cbd, radio_prop);
+set_prop(cbd, system_prop);

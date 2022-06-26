@@ -1,0 +1,69 @@
+# rild.te
+# Kanged from https://raw.githubusercontent.com/exynos5420/android_device_samsung_universal5420-common/lineage-18.1/sepolicy/vendor/rild.te
+#        and https://github.com/LineageOS/android_device_samsung_universal7580-common/blob/lineage-18.1/sepolicy/rild.te
+allow rild radio_data_file:dir create_dir_perms;
+allow rild radio_data_file:file create_file_perms;
+
+allow rild alarm_device:chr_file r_file_perms;
+
+allow rild factorymode_factoryapp_efs_file:file r_file_perms;
+
+allow rild sysfs_multipdp_writable:file w_file_perms;
+
+allow rild app_efs_file:file { getattr open read };
+allow rild device:chr_file { open read };
+allow rild proc_net:file write;
+
+# W rild    : type=1400 audit(0.0:102): avc: denied { search } for name="3619" dev="proc" ino=10447 scontext=u:r:rild:s0 tcontext=u:r:gpsd:s0 tclass=dir
+# W rild    : type=1400 audit(0.0:102): avc: denied { read } for name="cmdline" dev="proc" ino=9427 scontext=u:r:rild:s0 tcontext=u:r:gpsd:s0 tclass=file
+# W rild    : type=1400 audit(0.0:102): avc: denied { open } for path="/proc/3619/cmdline" dev="proc" ino=9427 scontext=u:r:rild:s0 tcontext=u:r:gpsd:s0 tclass=file
+# W rild    : type=1400 audit(0.0:103): avc: denied { getattr } for path="/proc/3619/cmdline" dev="proc" ino=9427 scontext=u:r:rild:s0 tcontext=u:r:gpsd:s0 tclass=file
+allow rild gpsd:dir search;
+allow rild gpsd:file { getattr open read };
+
+# gpsd
+# W gpsd    : type=1400 audit(0.0:101): avc: denied { connectto } for path=004D756C7469636C69656E74 scontext=u:r:gpsd:s0 tcontext=u:r:rild:s0 tclass=unix_stream_socket
+allow gpsd rild:unix_stream_socket connectto;
+
+# /dev/umts_boot0, /dev/umts_ipc0
+allow rild mif_device:chr_file { ioctl rw_file_perms };
+
+set_prop(rild, net_radio_prop)
+
+# Set property
+# I /system/bin/init: type=1107 audit(0.0:83): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=persist.ril.interfaceconf.failed pid=3675 uid=0 gid=1001 scontext=u:r:rild:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1'
+allow rild default_prop:property_service set;
+
+# rild reads /proc/pid/cmdline of mediaserver
+r_dir_file(rild, mediaserver);
+
+# /dev/knox_kap
+allow rild knox_device:chr_file r_file_perms;
+
+# /data/misc/radio/*
+allow rild system_data_file:dir rw_dir_perms;
+allow rild system_data_file:file create_file_perms;
+allow rild system_data_file:lnk_file r_file_perms;
+
+# /efs
+allow rild sec_efs_file:dir search;
+allow rild sec_efs_file:file r_file_perms;
+allow rild bin_nv_data_efs_file:file getattr;
+allow rild nv_core_efs_file:file getattr;
+
+# W rild    : type=1400 audit(0.0:124): avc: denied { search } for name="imei" dev="mmcblk0p3" ino=73 scontext=u:r:rild:s0 tcontext=u:object_r:unlabeled:s0 tclass=dir
+# W rild    : type=1400 audit(0.0:124): avc: denied { read } for name="mps_code.dat" dev="mmcblk0p3" ino=74 scontext=u:r:rild:s0 tcontext=u:object_r:unlabeled:s0 tclass=file
+# W rild    : type=1400 audit(0.0:124): avc: denied { open } for path="/efs/imei/mps_code.dat" dev="mmcblk0p3" ino=74 scontext=u:r:rild:s0 tcontext=u:object_r:unlabeled:s0 tclass=file
+# W rild    : type=1400 audit(0.0:125): avc: denied { getattr } for path="/efs/imei/mps_code.dat" dev="mmcblk0p3" ino=74 scontext=u:r:rild:s0 tcontext=u:object_r:unlabeled:s0 tclass=file
+allow rild imei_efs_file:dir search;
+allow rild imei_efs_file:file { getattr open read };
+
+# W rild    : type=1400 audit(0.0:85): avc: denied { search } for name="block" dev="tmpfs" ino=3421 scontext=u:r:rild:s0 tcontext=u:object_r:block_device:s0 tclass=dir
+# W rild    : type=1400 audit(0.0:85): avc: denied { read } for name="mmcblk0p13" dev="tmpfs" ino=3587 scontext=u:r:rild:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file
+# W rild    : type=1400 audit(0.0:85): avc: denied { open } for path="/dev/block/mmcblk0p13" dev="tmpfs" ino=3587 scontext=u:r:rild:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file
+allow rild block_device:blk_file { open read };
+allow rild block_device:dir search;
+
+# Phone application
+# W m.android.phone: type=1400 audit(0.0:150): avc: denied { call } for scontext=u:r:radio:s0 tcontext=u:r:gpuservice:s0 tclass=binder
+allow radio gpuservice:binder call;

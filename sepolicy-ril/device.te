@@ -1,0 +1,13 @@
+# Alarm device
+type alarm_device, dev_type;
+
+# UMTS device
+type mif_device, dev_type;
+
+# KNOX device
+type knox_device, dev_type;
+
+# /dev/block/mmcblk0p[0-9] (/dev/mbin0)
+type emmcblk_device, file_type;
+
+type radio_block_device, dev_type;
