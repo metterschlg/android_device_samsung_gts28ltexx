@@ -1,0 +1,6 @@
+#============= init ==============
+# W init    : type=1400 audit(0.0:83): avc: denied { create } for name="sap_uim_socket1" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file
+# W init    : type=1400 audit(0.0:84): avc: denied { setattr } for name="sap_uim_socket1" dev="tmpfs" ino=15046 scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file
+allow init socket_device:sock_file { create setattr };
+
+allow vendor_init sysfs:lnk_file { setattr };
