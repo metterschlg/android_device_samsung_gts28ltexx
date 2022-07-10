@@ -11,6 +11,8 @@ allow rild factorymode_factoryapp_efs_file:file r_file_perms;
 allow rild sysfs_multipdp_writable:file w_file_perms;
 
 allow rild app_efs_file:file { getattr open read };
+# W rild    : type=1400 audit(0.0:99): avc: denied { search } for name="FactoryApp" dev="mmcblk0p3" ino=32 scontext=u:r:rild:s0 tcontext=u:object_r:app_efs_file:s0 tclass=dir
+allow rild app_efs_file:dir search;
 allow rild device:chr_file { open read };
 allow rild proc_net:file write;
 
