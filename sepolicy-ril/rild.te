@@ -69,3 +69,8 @@ allow rild block_device:dir search;
 # Phone application
 # W m.android.phone: type=1400 audit(0.0:150): avc: denied { call } for scontext=u:r:radio:s0 tcontext=u:r:gpuservice:s0 tclass=binder
 allow radio gpuservice:binder call;
+
+# Fixing avc denial when performing phone calls
+allow audioserver rild:unix_stream_socket { connectto };
+allow rild audioserver:dir search;
+allow rild audioserver:file read;
