@@ -73,5 +73,5 @@ allow radio gpuservice:binder call;
 # Fixing avc denial when performing phone calls
 allow audioserver rild:unix_stream_socket { connectto };
 allow rild audioserver:dir search;
-allow rild audioserver:file { open read };
+allow rild audioserver:file { getattr open read };
 allow hal_sensors_default system_data_root_file:dir { open write };
