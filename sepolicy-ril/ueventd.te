@@ -1,1 +1,2 @@
-allow ueventd emmcblk_device:blk_file { create };
+#============= ueventd ==============
+allow ueventd emmcblk_device:blk_file { open create setattr getattr };
