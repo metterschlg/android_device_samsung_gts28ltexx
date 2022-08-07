@@ -1,0 +1,2 @@
+# HAL sensors
+allow hal_sensors_default system_data_root_file:file r_file_perms;
