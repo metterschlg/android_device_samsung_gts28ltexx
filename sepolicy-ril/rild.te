@@ -10,7 +10,7 @@ allow rild factorymode_factoryapp_efs_file:file r_file_perms;
 
 allow rild sysfs_multipdp_writable:file w_file_perms;
 
-allow rild sysfs:file w_file_perms;
+allow rild sysfs:file rw_file_perms;
 
 allow rild app_efs_file:file { getattr open read };
 # W rild    : type=1400 audit(0.0:99): avc: denied { search } for name="FactoryApp" dev="mmcblk0p3" ino=32 scontext=u:r:rild:s0 tcontext=u:object_r:app_efs_file:s0 tclass=dir
@@ -76,5 +76,5 @@ allow radio gpuservice:binder call;
 # Fixing avc denial when performing phone calls
 allow audioserver rild:unix_stream_socket { connectto };
 allow rild audioserver:dir search;
-allow rild audioserver:file { getattr open read };
+allow rild audioserver:file rw_file_perms;
 allow hal_sensors_default system_data_root_file:dir { open write };
