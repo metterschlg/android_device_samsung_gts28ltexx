@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
     
 # RILD
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.legacy.rc
+    $(LOCAL_PATH)/rootdir/etc/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.legacy.rc
 
 # Vibrator
 PRODUCT_PACKAGES += \
