@@ -1,0 +1,2 @@
+#============= system_server ==============
+allow system_server vendor_radio_prop:file r_file_perms;

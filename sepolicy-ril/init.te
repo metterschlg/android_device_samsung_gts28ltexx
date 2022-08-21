@@ -6,3 +6,5 @@ allow init socket_device:sock_file { create setattr };
 allow vendor_init sysfs:lnk_file { setattr };
 
 allow init emmcblk_device:blk_file r_file_perms;
+
+allow init socket_device:sock_file unlink;

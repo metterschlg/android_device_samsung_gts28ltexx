@@ -1,8 +1,6 @@
 # cbd modem daemon service
 # Kanged from https://github.com/a3y17lte/sepolicy/blob/master/cbd.te and 
 # https://github.com/GauthamAsir/Exynos7580-android_device_samsung_exynos7580-common/blob/master/sepolicy/cbd.te
-type cbd, domain;
-type cbd_exec, exec_type, vendor_file_type, file_type;
 
 net_domain(cbd);
 init_daemon_domain(cbd);
@@ -31,6 +29,7 @@ allow cbd block_device:dir r_dir_perms;
 # W cbd     : type=1400 audit(0.0:89): avc: denied { open } for path="/dev/block/mmcblk0p13" dev="tmpfs" ino=3704 scontext=u:r:cbd:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file
 # W cbd     : type=1400 audit(0.0:90): avc: denied { read } for name="mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:sysfs:s0 tclass=dir
 # W cbd     : type=1400 audit(0.0:90): avc: denied { open } for path="/sys/bus/platform/drivers/mif_sipc5" dev="sysfs" ino=10831 scontext=u:r:cbd:s0 tcontext=u:object_r:
+allow cbd tmpfs:blk_file rw_file_perms;
 allow cbd block_device:blk_file r_file_perms;
 
 # /proc/sys/vm/overcommit_memory

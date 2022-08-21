@@ -1,2 +1,4 @@
 #============= fsck ==============
 allow fsck emmcblk_device:blk_file rw_file_perms;
+allow fsck tmpfs:blk_file rw_file_perms;
+allowxperm fsck emmcblk_device:blk_file ioctl { BLKDISCARDZEROES BLKROGET BLKGETSIZE64 BLKGETSIZE BLKI2OSWSTRAT };
