@@ -554,6 +554,11 @@
     <!-- TODO -->
   </path>
 
+  <path name="voice-bt-sco-headset">
+    <path name="media-bt-sco-headset" />
+    <path name="gain-media-bt-sco-headset" />
+  </path>
+
   <path name="bt-sco-headset">
     <path name="media-bt-sco-headset" />
     <path name="gain-media-bt-sco-headset" />
@@ -615,6 +620,11 @@
 
   <path name="hdmi-mic">
     <!-- TODO -->
+  </path>
+
+  <path name="voice-bt-sco-mic">
+    <path name="media-bt-sco-headset-in" />
+    <path name="gain-media-bt-sco-headset-in" />
   </path>
 
   <path name="bt-sco-mic">
