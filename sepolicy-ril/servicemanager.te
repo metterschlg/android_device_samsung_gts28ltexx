@@ -1,0 +1,7 @@
+#============= servicemanager ==============
+allow servicemanager hal_light_default:dir search;
+allow servicemanager hal_light_default:file { open read };
+allow servicemanager hal_light_default:process getattr;
+allow servicemanager hal_power_default:dir search;
+allow servicemanager hal_power_default:file { open read };
+allow servicemanager hal_power_default:process getattr;

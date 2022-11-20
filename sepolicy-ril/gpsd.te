@@ -1,0 +1,2 @@
+#============= gpsd ==============
+allow gpsd default_prop:file { getattr open read };

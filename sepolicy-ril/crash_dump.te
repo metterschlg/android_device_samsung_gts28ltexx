@@ -1,0 +1,11 @@
+#============= crash_dump ==============
+allow crash_dump bluetooth_a2dp_offload_prop:file { getattr open };
+allow crash_dump bluetooth_data_file:file { getattr open read };
+allow crash_dump bluetooth_prop:file { getattr open };
+allow crash_dump device_config_runtime_native_boot_prop:file { getattr open };
+allow crash_dump device_config_runtime_native_prop:file { getattr open };
+allow crash_dump media_variant_prop:file { getattr open };
+#allow crash_dump odsign_prop:file { getattr open };
+allow crash_dump packagemanager_config_prop:file { getattr open };
+allow crash_dump qemu_sf_lcd_density_prop:file { getattr open };
+allow crash_dump resourcecache_data_file:file { getattr open read };
