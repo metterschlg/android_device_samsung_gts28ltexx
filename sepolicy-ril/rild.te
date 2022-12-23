@@ -82,5 +82,5 @@ allow hal_sensors_default system_data_root_file:dir { open write };
 # LOS 19.1
 allow rild default_prop:file { getattr open read };
 allow rild radio_core_data_file:dir { search add_name getattr write remove_name };
-allow rild radio_core_data_file:file { create open read setattr write unlink };
+allow rild radio_core_data_file:file { create open read getattr setattr write unlink };
 allow rild system_prop:file { getattr open read };
