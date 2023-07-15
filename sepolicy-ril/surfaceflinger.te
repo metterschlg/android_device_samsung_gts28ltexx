@@ -1,2 +1,0 @@
-#============= surfaceflinger ==============
-allow surfaceflinger vendor_hwc_prop:file r_file_perms;
