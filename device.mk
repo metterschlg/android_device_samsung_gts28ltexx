@@ -7,8 +7,8 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+    $(LOCAL_PATH)/configs/audio/mixer_paths_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml #\
+#    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
     libsecril-client-sap \
     modemloader \
     Stk
-    
+
 # RILD
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.legacy.rc
