@@ -21,8 +21,7 @@ $(call inherit-product, device/samsung/gts2-common/device-common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
-$(call inherit-product, vendor/lineage/config/telephony.mk)
+$(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
 
 PRODUCT_NAME := lineage_gts28ltexx
 PRODUCT_DEVICE := gts28ltexx

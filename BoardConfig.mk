@@ -16,6 +16,9 @@ BOARD_PROVIDES_LIBRIL := true
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := gts28lte,gts28ltexx
 
+# Allow ADB to start before lockscreen
+WITH_ADB_INSECURE := true
+
 # Add RIL-specific SELINUX policy
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy-ril
@@ -28,3 +31,5 @@ include device/samsung/gts2-common/BoardConfigCommon.mk
 #   board config so we need to explicitly set here again.
 LOCAL_PATH := device/samsung/gts28ltexx
 DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(LOCAL_PATH)/framework_compatibility_matrix.xml
