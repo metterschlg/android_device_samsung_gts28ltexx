@@ -1,0 +1,2 @@
+#============= bootstat ==============
+allow bootstat gpsd_exec:file r_file_perms;

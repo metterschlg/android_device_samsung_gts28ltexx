@@ -1,0 +1,2 @@
+#============= art_boot ==============
+#allow art_boot gpsd_exec:file read;

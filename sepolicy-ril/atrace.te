@@ -1,0 +1,2 @@
+#============= atrace ==============
+allow atrace gpsd_exec:file read;

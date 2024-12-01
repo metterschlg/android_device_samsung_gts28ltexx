@@ -1,0 +1,2 @@
+#============= bootanim ==============
+allow bootanim gpsd_exec:file read;

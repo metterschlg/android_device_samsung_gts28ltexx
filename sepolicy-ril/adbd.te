@@ -1,0 +1,8 @@
+#============= adbd ==============
+allow adbd gpsd_exec:file r_file_perms;
+
+
+#============= adbroot ==============
+#allow adbroot gpsd_exec:file r_file_perms;
+
+

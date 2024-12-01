@@ -84,3 +84,7 @@ allow rild default_prop:file { getattr open read };
 allow rild radio_core_data_file:dir { search add_name getattr write remove_name };
 allow rild radio_core_data_file:file { create open read getattr setattr write unlink };
 allow rild system_prop:file { getattr open read };
+
+# LOS 21
+allow rild kernel:system module_request;
+allow rild system_userdir_file:dir { getattr search };
