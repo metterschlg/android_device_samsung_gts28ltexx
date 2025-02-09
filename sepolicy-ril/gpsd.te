@@ -1,3 +1,174 @@
 #============= gpsd ==============
 allow gpsd default_prop:file { getattr open read };
 allow gpsd radio_prop:file { getattr open read };
+
+#============= adbroot ==============
+#allow adbroot gpsd_exec:file r_file_perms;
+
+#============= apexd ==============
+allow apexd gpsd_exec:file r_file_perms;
+
+#============= art_boot ==============
+#allow art_boot gpsd_exec:file r_file_perms;
+
+#============= artd ==============
+allow artd gpsd_exec:file r_file_perms;
+
+#============= atrace ==============
+allow atrace gpsd_exec:file r_file_perms;
+
+#============= audioserver ==============
+allow audioserver gpsd_exec:file r_file_perms;
+
+#============= auditctl ==============
+#allow auditctl gpsd_exec:file r_file_perms;
+
+#============= bpfloader ==============
+allow bpfloader gpsd_exec:file r_file_perms;
+
+#============= credstore ==============
+allow credstore gpsd_exec:file r_file_perms;
+
+#============= derive_classpath ==============
+#allow derive_classpath gpsd_exec:file r_file_perms;
+
+#============= derive_sdk ==============
+#allow derive_sdk gpsd_exec:file r_file_perms;
+
+#============= dex2oat ==============
+#allow dex2oat gpsd_exec:file r_file_perms;
+
+#============= extra_free_kbytes ==============
+allow extra_free_kbytes gpsd_exec:file r_file_perms;
+
+#============= flags_health_check ==============
+allow flags_health_check gpsd_exec:file r_file_perms;
+
+#============= fsck ==============
+allow fsck gpsd_exec:file r_file_perms;
+
+#============= fsverity_init ==============
+#allow fsverity_init gpsd_exec:file r_file_perms;
+
+#============= gatekeeperd ==============
+allow gatekeeperd gpsd_exec:file r_file_perms;
+
+allow gpsd system_data_file:dir r_dir_perms;
+
+#============= gsid ==============
+#allow gsid gpsd_exec:file r_file_perms;
+
+#============= hal_allocator_default ==============
+#allow hal_allocator_default gpsd_exec:file r_file_perms;
+
+#============= hwservicemanager ==============
+allow hwservicemanager gpsd_exec:file r_file_perms;
+
+#============= idmap ==============
+allow idmap gpsd_exec:file r_file_perms;
+
+#============= incidentd ==============
+allow incidentd gpsd_exec:file r_file_perms;
+
+#============= installd ==============
+allow installd gpsd_exec:file r_file_perms;
+
+#============= keystore ==============
+allow keystore gpsd_exec:file r_file_perms;
+
+#============= linkerconfig ==============
+#allow linkerconfig gpsd_exec:file r_file_perms;
+
+#============= lmkd ==============
+allow lmkd gpsd_exec:file r_file_perms;
+
+#============= logd ==============
+allow logd gpsd_exec:file r_file_perms;
+
+#============= mediaextractor ==============
+allow mediaextractor gpsd_exec:file r_file_perms;
+
+#============= mediametrics ==============
+allow mediametrics gpsd_exec:file r_file_perms;
+
+#============= mediaserver ==============
+allow mediaserver gpsd_exec:file r_file_perms;
+
+#============= mediaswcodec ==============
+allow mediaswcodec gpsd_exec:file r_file_perms;
+
+#============= misctrl ==============
+#allow misctrl gpsd_exec:file r_file_perms;
+
+#============= netd ==============
+allow netd gpsd_exec:file r_file_perms;
+
+#============= odrefresh ==============
+#allow odrefresh gpsd_exec:file r_file_perms;
+
+#============= odsign ==============
+#allow odsign gpsd_exec:file r_file_perms;
+
+#============= platform_app =============
+allow platform_app gpsd_exec:file r_file_perms;
+
+#============= priv_app ==============
+allow priv_app gpsd_exec:file r_file_perms;
+
+#============= prng_seeder ==============
+allow prng_seeder gpsd_exec:file r_file_perms;
+
+#============= profman ==============
+allow profman gpsd_exec:file r_file_perms;
+allow profman vendor_file:file r_file_perms;
+
+#============= recovery_persist ==============
+allow recovery_persist gpsd_exec:file r_file_perms;
+
+#============= sdcardd ==============
+allow sdcardd gpsd_exec:file r_file_perms;
+
+#============= servicemanager ==============
+allow servicemanager gpsd_exec:file r_file_perms;
+
+#============= shell ==============
+allow shell gpsd_exec:file r_file_perms;
+
+#============= statsd ==============
+allow statsd gpsd_exec:file r_file_perms;
+
+#============= storaged ==============
+#allow storaged gpsd_exec:file r_file_perms;
+
+#============= system_suspend ==============
+#allow system_suspend gpsd_exec:file r_file_perms;
+
+#============= tombstoned ==============
+allow tombstoned gpsd_exec:file r_file_perms;
+
+#============= toolbox ==============
+allow toolbox gpsd_exec:file r_file_perms;
+
+#============= traced ==============
+allow traced gpsd_exec:file r_file_perms;
+
+#============= traced_probes ==============
+allow traced_probes gpsd_exec:file r_file_perms;
+
+#============= usbd ==============
+allow usbd gpsd_exec:file r_file_perms;
+
+#============= vdc ==============
+allow vdc gpsd_exec:file r_file_perms;
+
+#============= vold ==============
+allow vold gpsd_exec:file r_file_perms;
+
+#============= vold_prepare_subdirs ==============
+allow vold_prepare_subdirs gpsd_exec:file r_file_perms;
+
+#============= wificond ==============
+allow wificond gpsd_exec:file r_file_perms;
+
+#============= zygote ==============
+allow zygote gpsd_exec:file r_file_perms;
