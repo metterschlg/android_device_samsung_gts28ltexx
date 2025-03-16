@@ -1,2 +1,0 @@
-#============= system_suspend ==============
-#allow system_suspend sysfs:file { open read };

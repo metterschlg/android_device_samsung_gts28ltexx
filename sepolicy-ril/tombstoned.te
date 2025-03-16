@@ -1,2 +1,0 @@
-#============= tombstoned ==============
-allow tombstoned gpsd_exec:file read;

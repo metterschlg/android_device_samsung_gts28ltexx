@@ -19,12 +19,12 @@ TARGET_OTA_ASSERT_DEVICE := gts28lte,gts28ltexx
 # Allow ADB to start before lockscreen
 WITH_ADB_INSECURE := true
 
-# Add RIL-specific SELINUX policy
-BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
-BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy-ril
-
 # Inherit common board flags
 include device/samsung/gts2-common/BoardConfigCommon.mk
+
+# Add RIL-specific SELINUX policy
+BOARD_VENDOR_SEPOLICY_DIRS += device/samsung/gts28ltexx/sepolicy-ril/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/samsung/gts28ltexx/sepolicy-ril/private
 
 # Add RIL-specific HIDL manifest _after_ the common one.
 #   Note that LOCAL_PATH gets overwritten by the common
